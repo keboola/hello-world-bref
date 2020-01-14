@@ -1,0 +1,41 @@
+{
+  "name": "keboola/hello-world-bref",
+  "license": "MIT",
+  "type": "project",
+  "description": "Hello World with bref",
+  "keywords": [ "keboola", "bref", "hello", "world" ],
+  "authors": [
+    {
+      "name": "Keboola",
+      "email": "devel@keboola.com"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "Keboola\\HelloWorldBref\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Keboola\\HelloWorldBref\\Tests\\": "tests/"
+    }
+  },
+  "require": {
+    "php": "^7.3",
+    "ext-json": "*",
+    "bref/bref": "^0.5.12"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "^7.1"
+  },
+  "scripts": {
+    "tests": "phpunit",
+    "ci": [
+      "@composer validate --no-check-all --strict",
+      "@tests"
+    ]
+  },
+  "config": {
+    "sort-packages": true
+  }
+}

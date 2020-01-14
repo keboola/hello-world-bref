@@ -1,0 +1,10 @@
+.idea
+node_modules
+jspm_packages
+.serverless
+.webpack
+.env
+.docker
+.DS_Store
+certs
+vendor

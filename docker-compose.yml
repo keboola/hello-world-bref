@@ -1,0 +1,23 @@
+version: "3"
+
+services:
+  deploy:
+    build:
+      context: .
+    environment:
+      - AWS_ACCESS_KEY_ID
+      - AWS_SECRET_ACCESS_KEY
+    command: serverless deploy --force
+
+  tests: &tests
+    build:
+      context: .
+    environment:
+      - AWS_ACCESS_KEY_ID
+      - AWS_SECRET_ACCESS_KEY
+    command: composer ci
+
+  tests-local:
+    <<: *tests
+    volumes:
+      - .:/var/task
