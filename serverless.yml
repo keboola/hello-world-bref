@@ -1,4 +1,4 @@
-service: app
+service: php-hello-world
 
 provider:
   name: aws
@@ -12,7 +12,6 @@ functions:
   api:
     handler: index.php
     description: ''
-    timeout: 28 # in seconds (API Gateway has a timeout of 29 seconds)
     layers:
       - ${bref:layer.php-73}
     events:

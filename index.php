@@ -44,7 +44,7 @@ lambda(function ($event) {
         return $actionFn($event);
     } catch (\Throwable $e) {
         return [
-            'statusCode' => $e->getCode(),
+            'statusCode' => 500,
             'body' => json_encode([
                 'errorMessage' => $e->getMessage(),
             ])
